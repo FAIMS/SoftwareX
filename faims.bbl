@@ -1,0 +1,118 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{McNutt2016-dg}
+M.~McNutt, K.~Lehnert, B.~Hanson, B.~A. Nosek, A.~M. Ellison, J.~L. King,
+  Liberating field science samples and data, Science 351~(6277) (2016)
+  1024--1026.
+
+\bibitem{Borgman2015-zg}
+C.~L. Borgman, Big Data, Little Data, No Data: Scholarship in the Networked
+  World, MIT Press, 2015.
+
+\bibitem{Kansa2010-qx}
+E.~C. Kansa, A.~Bissell, Web syndication approaches for sharing primary data in
+  ``small science'' domains, Data Science Journal 9 (2010) 42--53.
+
+\bibitem{Kintigh2006-uf}
+K.~Kintigh, The promise and challenge of archaeological data integration, Am.
+  Antiq. 71~(3) (2006) 567--578.
+
+\bibitem{Snow2006-nu}
+D.~R. Snow, M.~Gahegan, C.~L. Giles, K.~G. Hirth, G.~R. Milner, P.~Mitra, J.~Z.
+  Wang, {Others}, Cybertools and archaeology, Science 311~(5763) (2006) 958.
+
+\bibitem{Blanke2010-ou}
+T.~Blanke, M.~Hedges, A data research infrastructure for the arts and
+  humanities, in: S.~C. Lin, E.~Yen (Eds.), Managed Grids and Cloud Systems in
+  the {Asia-Pacific} Research Community, Springer, Boston, MA, 2010, pp.
+  179--191.
+
+\bibitem{Kintigh2014-ks}
+K.~W. Kintigh, J.~H. Altschul, M.~C. Beaudry, R.~D. Drennan, A.~P. Kinzig,
+  T.~A. Kohler, W.~F. Limp, H.~D.~G. Maschner, W.~K. Michener, T.~R. Pauketat,
+  P.~Peregrine, J.~A. Sabloff, T.~J. Wilkinson, H.~T. Wright, M.~A. Zeder,
+  Grand challenges for archaeology, Proc. Natl. Acad. Sci. U. S. A. 111~(3)
+  (2014) 879--880.
+
+\bibitem{Sobotkova2016-mx}
+A.~Sobotkova, S.~Ross, B.~Ballsun-Stanton, A.~Fairbairn, J.~Thompson,
+  P.~VanValkenburgh, Measure twice, cut once: Cooperative deployment of a
+  generalized, {Archaeology-Specific} field data collection system, in: E.~W.
+  Averett, J.~M. Gordon, D.~B. Counts (Eds.), Mobilizing the Past for a Digital
+  Future; the Potential of Digital Archaeology, The Digital Press at University
+  of North Dakota, The University of North Dakota, Grand Forks, 2016, pp.
+  334--370.
+
+\bibitem{Fee2016-nn}
+S.~B. Fee, Reflections on custom mobile app development for archaeological data
+  collection, in: E.~W. Averett, J.~M. Gordon, D.~B. Counts (Eds.), Mobilizing
+  the Past: Recent Approaches to Archaeological Fieldwork in the Digital Age,
+  The Digital Press at University of North Dakota, 2016, pp. 219--234.
+
+\bibitem{Ellis2016-vh}
+S.~J.~R. Ellis, Are we ready for new (digital) ways to record archaeological
+  fieldwork? a case study from pompeii, in: E.~W. Averett, J.~M. Gordon, D.~B.
+  Counts (Eds.), Mobilizing the Past: Recent Approaches to Archaeological
+  Fieldwork in the Digital Age, The Digital Press at University of North
+  Dakota, 2016, pp. 49--74.
+
+\bibitem{Carter2016-jm}
+B.~Carter, Crafting work flow- kobo toolbox/ {PostGIS/} {QGIS/} {LibreOffice}
+  base/ {pgadminIII} | institute on digital archaeology method \& practice,
+  \url{http://digitalarchaeology.msu.edu/crafting-work-flow-kobo-toolbox-postgis-qgis-libreoffice-base-pgadminiii/},
+  archived at \url{https://perma.cc/5JPH-XQN4}, Accessed: 2017-2-25 (2016).
+
+\bibitem{Ross2015-mo}
+S.~Ross, B.~Ballsun-Stanton, A.~Sobotkova, P.~Crook, Building the bazaar:
+  Enhancing archaeological field recording through an open source approach, in:
+  B.~Edwards, A.~Wilson (Eds.), Open Source Archaeology: Ethics and Practice,
+  Versita, Warsaw, Poland, 2015, pp. 111--129.
+
+\bibitem{Ross2013-dz}
+S.~Ross, A.~Sobotkova, B.~Ballsun-Stanton, P.~Crook, Creating eresearch tools
+  for archaeologists; the federated archaeological information management
+  systems project, Australian Archaeology 77 (2013) 107--119.
+
+\bibitem{Sobotkova2015-lq}
+A.~Sobotkova, B.~Ballsun-Stanton, S.~Ross, P.~Crook, Arbitrary offline data
+  capture on all of your androids: The {FAIMS} mobile platform, in:
+  A.~Traviglia (Ed.), Across Space and Time. Papers from the 41st Annual
+  Conference of Computer Applications and Quantitative Methods in Archaeology
+  ({CAA}), Amsterdam University Press, 2015, pp. 80--88.
+
+\bibitem{Gordon2016-xf}
+J.~M. Gordon, E.~W. Averett, D.~B. Counts, Mobile computing in archaeology:
+  Exploring and interpreting current practices, in: E.~W. Averett, J.~M.
+  Gordon, D.~B. Counts (Eds.), Mobilizing the Past: Recent Approaches to
+  Archaeological Fieldwork in the Digital Age, The Digital Press at University
+  of North Dakota, 2016, pp. 1--32.
+
+\bibitem{Good2016-gf}
+J.~Good, {KPAAM-CAM} overview, in: KPAAM-CAM -- Crossroads Workshop, 2016,
+  archieved at \url{https://perma.cc/VND8-X2JH}, Accessed: 2017-2-23.
+
+\bibitem{Kiley2016-sf}
+G.~Kiley, Student-developed software streamlines archaeological analysis,
+  \url{https://news.brown.edu/articles/2016/09/tablet}, archieved at
+  \url{https://perma.cc/8MMX-94K3}, Accessed: 2017-2-23 (2016).
+
+\bibitem{Might2010-fo}
+M.~Might, The {CRAPL}: An academic-strength open source license,
+  \url{http://matt.might.net/articles/crapl/}, archived at:
+  \url{https://perma.cc/EMD3-Q98Z} Accessed: 2017-2-25 (2010).
+
+\bibitem{Sun2012-ub}
+Q.~Sun, The scientific software developer in academia,
+  \url{http://www.software.ac.uk/blog/2012-05-01-scientific-software-developer-academia},
+  archived at \url{https://perma.cc/GMY7-BLH4}, Accessed: 2017-2-27 (2012).
+
+\bibitem{Wilson2003-xx}
+E.~O. Wilson, The encyclopedia of life, Trends Ecol. Evol. 18~(2) (2003)
+  77--80.
+
+\end{thebibliography}
