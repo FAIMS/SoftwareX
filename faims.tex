@@ -155,7 +155,7 @@ FAIMS Mobile is open-source, customisable software designed specifically to supp
 
 
 
-FAIMS Mobile consists of `core' software written in Java and Ruby, customised to particular field deployments using reusable and sharable definition packets consisting of XML, Beanshell, and CSS files (or, by sacrificing some nuances of control, a single file written in a DSL). More specifically, FAIMS uses the following technologies:
+FAIMS Mobile consists of `core' software written in Java and Ruby, customised to particular field deployments using reusable definition packets consisting of XML, Beanshell, and CSS files (which can be generated from a single file written in an XML-based DSL). More specifically, FAIMS uses the following technologies:
 
 \begin{itemize}
 \item Javarosa to render native Android UI elements at runtime;
@@ -166,44 +166,45 @@ FAIMS Mobile consists of `core' software written in Java and Ruby, customised to
 \item Nutiteq to render geospatial data;
 \item NativeCSS to style android-native elements;
 \item Antlr3 as a grammar parser for identifiers; and a
-\item Ruby on rails/Apache stack to provide a server, which can be hosted online or on modest hardware in the field.
+\item A Ruby on Rails / Apache stack to provide a server for synchronisation, version review, user management, and similar tasks, which can be hosted online or on modest hardware in the field.
 \end{itemize}
 
-We developed this architecture to meet two fundamental requirements: (1) the software had to accommodate a wide range of research designs, data schemas, and workflows, and (2) the software had to accommodate extremely variable structured, free text, multimedia, and geospatial data. Essentially, we needed to build a system capable of rendering and recording arbitrary field data, since individual `data loggers' tied to a particular methodologies (even if extensible) would not be worth the investment to build and deploy as separate mobile applications. 
+We developed this architecture to meet two fundamental requirements: (1) the software had to accommodate a wide range of research designs, data schemas, and workflows, and (2) the software had to accommodate extremely variable structured, free text, multimedia, and geospatial data. We needed to build a system capable of rendering and recording arbitrary field data, since individual `data loggers' tied to a particular methodologies (even if extensible) and built as separate mobile applications would not appeal to a large enough audience to warrant the investment required. 
 
-Our Android client can, at runtime, render an arbitrary data collection methodology (schema and workflow), save all records to a datastore, and opportunistically synchronize that data with instances of the software running on other devices. This distinction is much like the one between a web browser and a website. A browser contains many sophisticated engines for rendering the page, its interactivity, and its styling, but does not have content. A website uses the HTML engine provided by the browser to display its specific content. FAIMS Mobile likewise provides engines for rendering definition packets to produce customised data collection modules. 
+Our Android client can render definition packets at runtime to instantiate an arbitrary data collection methodology (schema and workflow), save records to a datastore, and opportunistically synchronize that data with a server and from there to other mobile devices. This distinction between the 'core' client and the definition packet resembles the one between a web browser and a website. A browser contains many sophisticated engines for rendering the page, its interactivity, and its styling, but does not have content. A website uses the HTML engine provided by the browser to display its specific content. 
 
-Four years of deployment experience revealed the importance of quality assurance, something too often neglected in academic software \cite{Might2010-fo, Sun2012-ub}. Each customisation and deployment is, indeed, a miniature software development project \cite{Sobotkova2016-mx}. Due to the need for significant QA per deployment, FAIMS Mobile 2.5 supports Robotium for unit and integration tests on customised data collection modules, such that large amounts of test data can be automatically added via the normal user interface. This allows users to load test their modules under simulated field conditions. 
+Four years of deployment experience revealed the importance of quality assurance, something too often neglected in academic software \cite{Might2010-fo, Sun2012-ub}. Each customisation and deployment is, indeed, a miniature software development project \cite{Sobotkova2016-mx}. Due to the need for significant QA per deployment, FAIMS Mobile 2.5+ supports Robotium for unit and integration tests on customised data collection modules, such that large amounts of test data can be automatically added via the normal user interface. This allows users to load-test their modules under simulated field conditions. 
 
 \subsection{Software Functionalities}
 
 
 
 FAIMS Mobile improves field research by providing a wide range of features that specifically address the needs of field research across disciplines, while facilitating the production of compatible datasets from  heterogeneous data structures and workflows. These features include:
+
 \begin{itemize}
-\item Deep customisation of data schema, user interface, and automation using either a packet of XML, Beanshell, and CSS documents for nuanced control, or a single file in an XML-based domain-specific language for ease of deployment. Definition document(s) are separate for core software, making modification and reuse easier.
+\item Deep customisation of data schema, user interface, and automation using either a packet of XML, Beanshell, and CSS documents for nuanced control, or a single file in an XML-based domain-specific language for ease of deployment. Definition document(s) are separate from core software, making modification and reuse easier.
 \item Collection of various data types within a single record, including structured data, geospatial data, free text, sensor-produced multimedia, and file attachments.
-\item Automated, bidirectional synchronisation of all data across an unlimited number of devices using a local or online server. Robust offline capability is achieved through replication of the entire datastore on each device, not caching. 
-\item To reduce device storage requirements, the synchronisation of multimedia files can be configured, e.g., to copy only thumbnails to devices while keeping a full-resolution image on the server.
+\item Automated, bidirectional synchronisation of all data across an unlimited number of devices using a local or online server. Replication of the entire datastore on each device, not caching, provides robust offline capability. 
 \item Opportunistic synchronisation whenever a connection is available, allowing devices to work in network-degraded environments or offline for extended periods of time. 
+\item Configurable synchronisation of multimedia files; e.g., to reduce device storage demands, a full-resolution image can be kept on the server while only thumbnails are copied to devices.
 \item Defaults, flow logic, hierarchical selections, dynamic UI (expand, collapse, hide, or show input fields), and other advanced data collection features.
 \item Mobile GIS supporting raster and vector data, layer management, legacy data visualisation, and point, line, and polygon creation and editing. Multiple records can be linked to a single shape, or multiple shapes to a single record.
-\item To enable offline mapping, base maps and legacy data are uploaded to the server, which pushes them to all devices. Geospatial data (vectors) collected in the field is synchronised across all devices. 
+\item Offline mapping. Base maps and legacy data are uploaded to the server and pushed to all devices. Geospatial data (vectors) created in the field is synchronised across all devices. 
 \item `Annotation' and `certainty' fields attached to every record. The former allows the collection of granular metadata (mimicking the `margins of the page' in paper recording), while the latter allows users to record their confidence in an observation. 
-\item Internal and external sensor support, external Bluetooth devices like GPS receivers and USB / HID devices like digital balances and calipers.
-\item Multilingual support using a localisation file.
-\item An append-only datastore providing a full revision history, including the ability to review and reverse changes selectively.
+\item Internal and external sensor and peripheral support. All internal device sensors can be called (e.g., camera, microphone, GPS, etc.). External Bluetooth devices like GPS receivers, USB / HID devices like digital balances and calipers, and Bluetooth or USB label printers can be connected.
+\item Multilingual support using a plain-text localisation file.
+\item An append-only datastore providing a full revision history, including the ability to review and reverse changes to records selectively.
 \item Mobile device and server-side validation.
 \item Aids to good practice including contextual HTML help, `picture dictionaries' (selections based on images), and selection trees that can guide users through complex processes.
 \item Embedding of URIs into controlled vocabularies or other elements to link them to shared vocabularies, thesauri, or ontologies.
-\item Customisable export to desktop software, pre-existing databases, or online data services (based on SQL queries).
+\item Customisable export to desktop software, pre-existing databases, or online data services (using SQL queries).
 \end{itemize}
 
 
 \subsection{Sample code snippets analysis}
 
 
-While a thorough discussion of the module code is out of scope for this paper, we have two fundamental documents which discuss module creation from start to finish. The first: `FAIMS User to Developer Documentation' (linked at \url{https://www.fedarch.org/support/\#2}, archived at: \url{https://perma.cc/8JDY-6RKL}) is designed to walk normal users through the creation of a module from first principles. The second `The FAIMS Cookbook' is a description of our data structures and API designed in a rough tutorial format (linked: from support page above, archived: \url{https://perma.cc/H6XJ-X6E2}).
+While a thorough discussion of the module code is out of scope for this paper, we have two documents which discuss module creation from start to finish. The first: `FAIMS User to Developer Documentation' (linked at \url{https://www.fedarch.org/support/\#2}, archived at: \url{https://perma.cc/8JDY-6RKL}) is designed to walk normal users through the creation of a module from first principles. The second `The FAIMS Cookbook' is a description of our data structures and API designed in a tutorial format (linked: from support page above, archived: \url{https://perma.cc/H6XJ-X6E2}).
 
 \section{Illustrative Examples}
 
