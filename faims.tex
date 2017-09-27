@@ -124,7 +124,6 @@ Android \sep Mobile software \sep Field research \sep Field Science
 
 
 \section{Motivation and significance}
-\label{}
 
 Many disciplines in the social sciences, humanities, and biological, earth, and environmental sciences depend upon data generated through human-mediated fieldwork. Such data might arise from excavation in archaeology, wildlife observation in ecology, soil sampling in environmental geochemistry, or subject interviews in oral history. Field research disciplines, however, often lack transparency and reproducibility, compromising the integrity of research results \cite{McNutt2016-dg}. Field data is often collected using an ad-hoc mix of hard copy, data fragments in various formats, and bespoke databases \cite{Borgman2015-zg, Kansa2010-qx, Kintigh2006-uf, Snow2006-nu}. Datasets, furthermore, are often trapped in hard-copy archives, local storage, or digital `silos', making them difficult to discover and limiting reinterpretation and reuse \cite{Blanke2010-ou}. Digital datasets are often highly variable, of poor quality, and incompatible. Deficiencies like these inhibit re-analyses of primary data and the combination of datasets from multiple studies for large-scale research \cite{Kintigh2006-uf, Kintigh2014-ks, McNutt2016-dg}. 
 
@@ -132,28 +131,29 @@ Insufficient attention has been paid to the development of software specifically
 
 FAIMS Mobile, conversely, is `generalised' software which combines the particular features required for field research with sufficient customisability and redeployability to allow its use across disciplines, providing a large enough user base to support its development and maintenance and have a meaningful impact on research (see Section 4 below; cf. \cite{Sobotkova2016-mx}). FAIMS Mobile is open source software developed by the Field Acquired Information Systems Project, an e-research infrastructure project based at Macquarie University, Sydney, Australia. It is mature software that has been under development since 2012 (see: \cite{Ross2015-mo, Ross2013-dz, Sobotkova2015-lq}). Most other generalised field data collection software used for fieldwork, such as ARK, Heurist, or Kora \cite{Gordon2016-xf}, requires a continuous connection to a server.
 
-FAIMS is most comparable to Open Data Kit (ODK) and its variants, but is differentiated by its lineage. ODK, another mature offline mobile data collection platform, was designed for social surveys, where an investigator asks questions of a interviewee. FAIMS, conversely, originated in archaeology, where an investigator records observations about things in the material world, relationships between those observations, and metadata contextualising the collection of those observations. Both projects are open-source, Java-based data collection platforms with similar potential and shared libraries, serving researchers who face similar problems; while solutions to those problems diverged significantly when FAIMS began development, over time features have converged to a degree. Features specific to FAIMS include mature bi-directional synchronisation across all devices (an alpha feature in ODK 2.0), use of an append-only datastore that provides a version history for all records, support for a wider range of external sensors, and more advanced GIS data operations (compared to GeoODK). Provisions for help and metadata capture are also richer and more granular. Field research projects, especially in liminal disciplines such as linguistics or oral history, would be wise to evaluate both platforms. 
+FAIMS Mobile is most comparable to Open Data Kit (ODK) (\url{https://opendatakit.org/}, \url{https://perma.cc/9BGB-8RUT}) and its variants, but is differentiated by its lineage. ODK was designed for social surveys, where an investigator asks questions of a interviewee. FAIMS, conversely, originated in archaeology, where an investigator records observations about things in the material world, relationships between those observations, and metadata contextualising the collection of those observations. Both projects are open-source, Java-based data collection platforms customised using XML-based domain specific languages. ODK also offers simpler but more restrictive customisation using ODK Build (an HTML5 drag-and-drop interface), XLSForm (a tool that uses an Excel file to build a form), or third-party, GUI-based applications like KoBo Toolbox. FAIMS, conversely, supports more profound customisation without modification of core software. It also includes features not found in ODK: more nuanced relationships between entities, bi-directional synchronisation across all devices (a feature in ODK 2.0 Tool Suite, which is in alpha release), use of an append-only datastore that provides a version history for all records, support for a wider range of external sensors and peripherals like label printers (‘ODK Sensors’ is in alpha release), and more advanced geospatial data operations (compared to GeoODK and its derivatives). FAIMS also has richer and more granular help and metadata capture. In short, FAIMS is more customisable and has more field-research specific features than ODK, but as a result customisation is more entailed. Field research projects, especially in liminal disciplines such as linguistics or oral history, would be wise to evaluate both platforms.
 
 
 \subsection{Experimental setting}
-\label{}
 
-FAIMS Mobile is designed to collect heterogenous data of various types (structured, free text, geospatial, multimedia) produced by arbitrary methodologies during human-mediated field research. It requires customisation to instantiate a project-specific data model, user interface, and workflow, but it addresses problems shared across field-based projects, such as provision of a mobile GIS and automated synchronisation across multiple devices in a network-degraded environment.  
 
-During a typical deployment, researchers work with FAIMS project staff to articulate their data model and workflow. A FAIMS developer then renders that methodology into a `definition packet' of files that produce a `module' (i.e., an implementation of FAIMS Mobile customised for a particular project). Separate definition packet files control the data schema (XML), the user interface (XML and CSS), and automation and logic (Beanshell), offering nuanced control. The interface can also be translated into multiple languages using a (plain text) localisation file. Completed modules are then deployed to a local or online Ubuntu server, and from there onto as many Android devices as needed (after the core mobile application is installed, e.g. from Google Play). Data is then collected using those devices, which can operate fully offline, and synchronised opportunistically when a network connection to the server is available. Data can be validated at the time of entry on the device, or later on the server. At the end of data collection, data is exported in the user's desired format by means of a customisable exporter. Three deployment case studies have been published in Sobotkova, et al., 2016\cite{Sobotkova2016-mx}.
+FAIMS Mobile is designed to collect heterogenous data of various types (structured, free text, geospatial, multimedia) produced by arbitrary methodologies during human-mediated field research. It requires customisation to instantiate a project-specific data model, user interface, and workflow, but it addresses problems shared across field-based projects, such as provision of a mobile GIS and automated synchronisation across multiple devices in a network-degraded environment. The FAIMS Project provides customisation services to support a typical open-source revenue model \cite{Kelly2008-sb}. We also provide ‘User to Developer’ documentation (\url{https://github.com/FAIMS/UserToDev}, Preprint PDF \url{https://perma.cc/M4B3-JJEA}) to support do-it-yourself customisation.
 
-Alternatively, FAIMS has developed a XML-based domain specific language (DSL) to simplify customisation. Using this DSL, a single file can be used to generate all necessary definition packet files. In addition to deployments conducted by the FAIMS team, projects have independently customised FAIMS Mobile themselves using both approaches \cite{Good2016-gf, Kiley2016-sf}.
+During a typical FAIMS-led deployment, researchers work with project staff to articulate their data model and workflow. A developer then renders that methodology into a ‘definition packet’ of files that produce a ‘module’ (i.e., an implementation of FAIMS Mobile customised for a particular project). Separate definition packet files control the data schema (XML), the user interface (XML and CSS), and automation and logic (Beanshell), offering nuanced control. The interface can also be translated into multiple languages using a (plain text) localisation file. Completed modules are then deployed to a local or online Ubuntu server, and from there onto as many Android devices as needed (after the core mobile application is installed, e.g. from Google Play). Data is then collected using those devices, which can operate fully offline, and synchronised opportunistically when a network connection to the server is available. Data can be validated at the time of entry on the device, or later on the server. At the end of data collection, data is exported in the user’s desired format by means of a customisable exporter. Three deployment case studies have been published in Sobotkova, et al., 2016\cite{Sobotkova2016-mx}.
 
+
+Alternatively, FAIMS has developed a XML-based domain specific language (DSL) to simplify customisation. Using this DSL, a single file can be used to generate a complete definition packet, at the expense of some loss of independent control over each element of a customisation (data schema, UI, automation). 
+
+In addition to deployments conducted by the FAIMS team, projects have independently customised FAIMS Mobile themselves using both the detailed approach of producing an entire definition packet and the simplified DSL-based approach\cite{Good2016-gf, Kiley2016-sf}. Users who are satisfied with one of the many modules in our GitHub library (\url{https://github.com/FAIMS}) can also simply download and instantiate an existing customisation.
 
 \section{Software description}
-\label{}
 
 
 FAIMS Mobile is open-source, customisable software designed specifically to support field research across many domains. It allows offline collection of structured, text, multimedia, and geospatial data on multiple Android devices, and is built around an append-only datastore that provides complete version histories. It includes customisable export to existing databases or in standard formats, supported by features that facilitate data compatibility. Finally, it is designed for rapid prototyping using and easy redeployability to reduce the costs of implementation. 
 
 
 \subsection{Software Architecture}
-\label{}
+
 
 
 FAIMS Mobile consists of `core' software written in Java and Ruby, customised to particular field deployments using reusable and sharable definition packets consisting of XML, Beanshell, and CSS files (or, by sacrificing some nuances of control, a single file written in a DSL). More specifically, FAIMS uses the following technologies:
@@ -177,17 +177,19 @@ Our Android client can, at runtime, render an arbitrary data collection methodol
 Four years of deployment experience revealed the importance of quality assurance, something too often neglected in academic software \cite{Might2010-fo, Sun2012-ub}. Each customisation and deployment is, indeed, a miniature software development project \cite{Sobotkova2016-mx}. Due to the need for significant QA per deployment, FAIMS Mobile 2.5 supports Robotium for unit and integration tests on customised data collection modules, such that large amounts of test data can be automatically added via the normal user interface. This allows users to load test their modules under simulated field conditions. 
 
 \subsection{Software Functionalities}
-\label{}
+
 
 
 FAIMS Mobile improves field research by providing a wide range of features that specifically address the needs of field research across disciplines, while facilitating the production of compatible datasets from  heterogeneous data structures and workflows. These features include:
 \begin{itemize}
 \item Deep customisation of data schema, user interface, and automation using either a packet of XML, Beanshell, and CSS documents for nuanced control, or a single file in an XML-based domain-specific language for ease of deployment. Definition document(s) are separate for core software, making modification and reuse easier.
 \item Collection of various data types within a single record, including structured data, geospatial data, free text, sensor-produced multimedia, and file attachments.
-\item Automated, configurable synchronisation across an unlimited number of devices using a local or online server. 
-\item Synchronisation is opportunistic, whenever a connection is available, allowing devices to work in network-degraded environments or offline for extended periods of time. Robust offline capability is achieved through maintenance of the datastore on each device, not caching.
+\item Automated, bidirectional synchronisation of all data across an unlimited number of devices using a local or online server. Robust offline capability is achieved through replication of the entire datastore on each device, not caching. 
+\item To reduce device storage requirements, the synchronisation of multimedia files can be configured, e.g., to copy only thumbnails to devices while keeping a full-resolution image on the server.
+\item Opportunistic synchronisation whenever a connection is available, allowing devices to work in network-degraded environments or offline for extended periods of time. 
 \item Defaults, flow logic, hierarchical selections, dynamic UI (expand, collapse, hide, or show input fields), and other advanced data collection features.
 \item Mobile GIS supporting raster and vector data, layer management, legacy data visualisation, and point, line, and polygon creation and editing. Multiple records can be linked to a single shape, or multiple shapes to a single record.
+\item To enable offline mapping, base maps and legacy data are uploaded to the server, which pushes them to all devices. Geospatial data (vectors) collected in the field is synchronised across all devices. 
 \item `Annotation' and `certainty' fields attached to every record. The former allows the collection of granular metadata (mimicking the `margins of the page' in paper recording), while the latter allows users to record their confidence in an observation. 
 \item Internal and external sensor support, external Bluetooth devices like GPS receivers and USB / HID devices like digital balances and calipers.
 \item Multilingual support using a localisation file.
@@ -200,12 +202,12 @@ FAIMS Mobile improves field research by providing a wide range of features that 
 
 
 \subsection{Sample code snippets analysis}
-\label{}
+
 
 While a thorough discussion of the module code is out of scope for this paper, we have two fundamental documents which discuss module creation from start to finish. The first: `FAIMS User to Developer Documentation' (linked at \url{https://www.fedarch.org/support/\#2}, archived at: \url{https://perma.cc/8JDY-6RKL}) is designed to walk normal users through the creation of a module from first principles. The second `The FAIMS Cookbook' is a description of our data structures and API designed in a rough tutorial format (linked: from support page above, archived: \url{https://perma.cc/H6XJ-X6E2}).
 
 \section{Illustrative Examples}
-\label{}
+
 
 \begin{figure}[!htb]
 \minipage{0.49\textwidth}
@@ -244,22 +246,22 @@ Field research often requires spatial data capture and visualisation. FAIMS has 
 
 
 \section{Impact}
-\label{}
+
 
 
 FAIMS allows the efficient collection of field data, dramatically reducing or eliminating manual digitisation (see \cite{Sobotkova2016-mx}). Near-real-time availability of data from multiple devices for review also provides immediate error detection (especially when combined with validation and contextual help). Finally, the software is customisable, extensible, and community driven; if current or potential users request new features, they can be implemented (within budget constraints). Field research will never represent more than a fraction of the market for generic, mass-market products, whereas it is the sole focus of FAIMS. Researchers can, therefore, compromise less and actively contribute to the development of purpose-built software through their specific customisations or core-software feature requests \cite{Sobotkova2016-mx}. Organisations with sufficient development capacity are, of course, also welcome to contribute to the core software open source project.
 
 Beyond the immediate needs of users, FAIMS Mobile improves research practice and data management. URIs can be embedded in controlled vocabularies and other elements\cite{Sobotkova2015-lq}, linking them to linked open data sources (e.g., species information can be linked to the Encyclopedia of Life\cite{Wilson2003-xx}). Localisation can be used to `translate' a local language of practice to a standard vocabulary (e.g., `context' or `locus' can be translated to `statigraphic unit' - and then linked to an online ontology). Customisable data export formats collected data for existing services or standards (e.g., archaeological records can be exported not only as shapefiles, CSVs, or a 3NF relational database for incorporation into an existing geodatabase, but also as XML or GeoJSON for ingest into domain-specific repositories like Open Context). Perhaps most importantly, comprehensive, rather than selective, datasets can be created and exported for publication, improving transparency and reproducibility. Combined with features that improve data compatibility across projects, FAIMS assists large-scale field research. 
 
-FAIMS Mobile also makes digital recording a more feasible and less costly option for researchers \cite{Sobotkova2016-mx, Sobotkova2015-lq}. The core software does the `heavy lifting' of field recording (data storage, bi-directional synchronisation, GIS, etc.), and can be customised by either leveraging the control of a full definition packet or the efficiency of the single-file DSL module generator. An experienced developer can rapidly prototype a recording system /so long as data and workflow models are available (well-scoped field recording systems of moderate complexity can be prototyped in one to two developer-days). Reuse and modification of existing customisations from a growing, openly-licensed online library (leveraging version control systems like GitHub) also helps to reduce deployment costs\cite{Ross2015-mo}. Deployment of FAIMS Mobile is therefore less expensive than production of bespoke mobile applications, and competitive with deployment of a suite of generic tools with many different features: a geoDBMS, GIS, social survey software, multimedia management software, note-taking software, etc. \cite{Carter2016-jm}.
-FAIMS sacrifices the ultimate flexibility of these generic tools to offer more functionality specific to field research, better integration of different data types, and fewer compromises on the part of the researcher. Since FAIMS is also easier to redeploy than customised combinations of mass-market software, is allows improvements and innovations to be shared more readily\cite{Ross2015-mo}.  
+FAIMS Mobile also makes digital recording a more feasible and less costly option for researchers \cite{Sobotkova2016-mx, Sobotkova2015-lq}. The core software does the `heavy lifting' of field recording (data storage, bi-directional synchronisation, GIS, etc.), and can be customised by either leveraging the control of a full definition packet or the efficiency of the single-file DSL module generator. An experienced developer can rapidly prototype a recording system /so long as data and workflow models are available (well-scoped field recording systems of moderate complexity can be prototyped in one to two developer-days). Reuse and modification of existing customisations from a growing, openly-licensed online library (leveraging version control systems like GitHub) also helps to reduce deployment costs\cite{Ross2015-mo}. Deployment of FAIMS Mobile is therefore less expensive than production of bespoke mobile applications, and competitive with deployment of a suite of generic tools with many different features: a geoDBMS, GIS, social survey software, multimedia management software, note-taking software, etc. \cite{Carter2016-jm}. FAIMS sacrifices the ultimate flexibility of these generic tools to offer more functionality specific to field research, better integration of different data types, and fewer compromises on the part of the researcher. Since FAIMS is also easier to redeploy than customised combinations of mass-market software, it allows improvements and innovations to be shared more readily\cite{Ross2015-mo}.  
 
 FAIMS Mobile has changed users' daily practice. Three case studies involving archaeological deployments \cite{Sobotkova2016-mx} indicate that users benefit from the increased efficiency of fieldwork, in that the time saved by avoiding digitisation more than offsets the time required to implement FAIMS and more data collected during fieldwork of a given length. Born-digital data avoided problems with delayed digitisation, which often occurred long after field recording when the context of of the record had been forgotten (or the person making the record was no longer available). Researchers reported more complete, consistent, and granular data. They also reported that information could be exchanged more quickly between excavators and specialists, which in one case improved `post-excavation reconstruction of the site' and facilitated the evaluation of patterns for meaning in another. They also observed that the process of moving from paper to digital required comprehensive reviews of field practice, during which knowledge implicit in existing systems to become explicit and data was modelled more carefully. By participating in a `miniature software development project', researchers gained familiarity with the strengths, limits, and demands of software deployment, especially the need for extensive testing. The greatest challenge posed by the transition from paper has been the reallocation of time from the end of a project (digitisation) to the beginning (data modelling, development, and testing), even if they realise an overall time savings. 
 
-Although adoption of digital recording during fieldwork represents a significant socio-technical change, FAIMS Mobile has seen good uptake. Since 2012 FAIMS Mobile has supported over 25 major research projects, with approximately 300 users logging over 10,000 hours in the application. Most uptake to date has been at large, multi-year projects that are still early in their lifecycle, so all FAIMS-related publications to date have focused on the software itself or the transition from paper-based to digital workflows. While archaeologists comprise the main user group, FAIMS now supports research in other disciplines as well. Fifteen archaeology, ecology, and history projects are scheduled for 2017 with an estimated usage of 12,000 hours. A 2016-2017 New South Wales Research Attraction and Acceleration Program award is funding links to government resources (e.g., automated data submission to the Aboriginal Heritage Information Management System of NSW) making it more attractive to commercial users. This award is also funding community-based heritage and science deployments, where members of the public will be able to download preconfigured versions of FAIMS Mobile to report information about archaeological remains or wildlife.
+Although adoption of digital recording during fieldwork represents a significant socio-technical change, FAIMS Mobile has seen good uptake. Since 2012 FAIMS Mobile has been used in the field by close to 30 research projects, with approximately 300 users logging over 10,000 hours in the application. Most uptake to date has been at large, multi-year projects that are still early in their lifecycle, so all FAIMS-related publications to date have focused on the software itself or the transition from paper-based to digital workflows. While archaeologists comprise the main user group, FAIMS now supports re search in other disciplines as well. Fourteen archaeology, ecology, and history projects are scheduled for 2017 with an estimated usage of another 10,000 hours. A 2016-2017 New South Wales Research Attraction and Acceleration Program award is funding links to government resources (e.g., automated data submission to the Aboriginal Heritage Information Management System of NSW) making it more attractive to commercial users. This award is also funding community-based heritage and science deployments, where members of the public will be able to download preconfigured versions of FAIMS Mobile to report information about archaeological remains or wildlife. A table of completed customisations as of the time of writing has been provided under Supplemental Material, while an up-to-date list can be found online (\url{https://faimsproject.atlassian.net/wiki/spaces/MobileUser/pages/83300748/Existing+Modules}).
+
 
 \section{Conclusions}
-\label{}
+
 
 When they collect data digitally, field researchers often re-purpose mass-market or general-purpose software that was not specifically designed to meet their needs, often requiring several pieces of software (some of which are individually complex) to accommodate the rich and varied data they must collect. FAIMS Mobile offers an alternative. It is purpose-built for field research with extensive community input, including five years of iterative co-development with field researchers first in archaeology, and more recently in geoscience, history, and ecology. FAIMS Mobile offers an unparalleled range of features to support fieldwork, including collection of structured, free-text, multimedia, and geospatial data, deep customisability, mobile GIS, use of internal and external sensors, offline capability with opportunistic synchronisation using either an online or local server, full record version histories, multilingual support, certainties and annotations attached to individual fields, and rich contextual help. It includes customisable export to existing databases or in standard formats, supported by features that facilitate data compatibility. It is designed for rapid prototyping and easy redeployability to reduce the costs of implementation, leveraging community software version control systems like GitHub.  FAIMS Mobile is community-driven, customisable, extensible software that can support the socio-technical transition from paper to digital in field research disciplines and facilitate the production of comprehensive, compatible datasets to improve synthetic research, transparency, and reproducibility.  
 
@@ -272,7 +274,7 @@ When they collect data digitally, field researchers often re-purpose mass-market
 %% \label{}
 
 \section*{Acknowledgements}
-\label{}
+
 
 We would like to thank the many individuals and organisation who have contributed the FAIMS Project since 2012. For a complete list of project sponsors and participants, see \url{https://www.faims.edu.au/}.
 
@@ -284,7 +286,7 @@ Funding: 	This work was supported by the National eResearch Collaboration Tools 
 %% bibitems, please use
 %%
 \section*{References}
-\label{}
+
 
 \bibliographystyle{elsarticle-num} 
 \bibliography{FAIMS}
@@ -302,7 +304,7 @@ Funding: 	This work was supported by the National eResearch Collaboration Tools 
 %%\end{thebibliography}
 
 \section*{Required Metadata}
-\label{}
+
 
 
 %% To the people typesetting this. Do we want to perma.cc all of these uris? 
@@ -340,7 +342,7 @@ C8 & Support email for questions & \url{support@fedarch.org} \\
 \hline
 \end{tabular}
 \caption{Code metadata (mandatory)}
-\label{} 
+
 \end{table}
 
 
@@ -371,7 +373,7 @@ S7 & Support email for questions & support@fedarch.org\\
 \hline
 \end{tabular}
 \caption{Software metadata (optional)}
-\label{} 
+
 \end{table}
 
 \end{document}

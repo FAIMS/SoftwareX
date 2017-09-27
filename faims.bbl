@@ -56,13 +56,13 @@ S.~B. Fee, Reflections on custom mobile app development for archaeological data
 
 \bibitem{Ellis2016-vh}
 S.~J.~R. Ellis, Are we ready for new (digital) ways to record archaeological
-  fieldwork? a case study from pompeii, in: E.~W. Averett, J.~M. Gordon, D.~B.
-  Counts (Eds.), Mobilizing the Past: Recent Approaches to Archaeological
+  fieldwork? a case study from {Pompeii}, in: E.~W. Averett, J.~M. Gordon,
+  D.~B. Counts (Eds.), Mobilizing the Past: Recent Approaches to Archaeological
   Fieldwork in the Digital Age, The Digital Press at University of North
   Dakota, 2016, pp. 49--74.
 
 \bibitem{Carter2016-jm}
-B.~Carter, Crafting work flow- kobo toolbox/ {PostGIS/} {QGIS/} {LibreOffice}
+B.~Carter, Crafting work flow- {KoBoToolbox/} {PostGIS/} {QGIS/} {LibreOffice}
   base/ {pgadminIII} | institute on digital archaeology method \& practice,
   \url{http://digitalarchaeology.msu.edu/crafting-work-flow-kobo-toolbox-postgis-qgis-libreoffice-base-pgadminiii/},
   archived at \url{https://perma.cc/5JPH-XQN4}, Accessed: 2017-2-25 (2016).
@@ -91,6 +91,11 @@ J.~M. Gordon, E.~W. Averett, D.~B. Counts, Mobile computing in archaeology:
   Gordon, D.~B. Counts (Eds.), Mobilizing the Past: Recent Approaches to
   Archaeological Fieldwork in the Digital Age, The Digital Press at University
   of North Dakota, 2016, pp. 1--32.
+
+\bibitem{Kelly2008-sb}
+K.~Kelly, \href{http://kk.org/thetechnium/better-than-fre/}{Better than free},
+  \url{http://kk.org/thetechnium/better-than-fre/}, accessed: 2017-3-29 (2008).
+\newline\urlprefix\url{http://kk.org/thetechnium/better-than-fre/}
 
 \bibitem{Good2016-gf}
 J.~Good, {KPAAM-CAM} overview, in: KPAAM-CAM -- Crossroads Workshop, 2016,
