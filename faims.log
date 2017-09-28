@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.9.27)  27 SEP 2017 12:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.22)  28 SEP 2017 17:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**faims
+**faims.tex
 (./faims.tex
 LaTeX2e <2017/01/01> patch level 3
-Babel <3.9r> and hyphenation patterns for 3 language(s) loaded.
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/elsarticle/elsarticle.cls
 Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
 \@bls=\dimen102
@@ -351,39 +351,39 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
  [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 162.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 161.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 162.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 161.
  [4] [5]
 Overfull \hbox (3.69185pt too wide) in paragraph at lines 191--192
 []\OT1/cmr/m/n/12 Mobile GIS sup-port-ing raster and vec-tor data, layer man-ag
 e-ment, legacy
  []
 
-[6] <image-0.jpg, id=140, 1204.5pt x 1927.2pt>
+[6] <image-0.jpg, id=142, 1204.5pt x 1927.2pt>
 File: image-0.jpg Graphic file (type jpg)
  <use image-0.jpg>
 Package pdftex.def Info: image-0.jpg used on input line 214.
 (pdftex.def)             Requested size: 191.10214pt x 305.7411pt.
 
-<image-1.jpg, id=141, 1204.5pt x 1927.2pt>
+<image-1.jpg, id=143, 1204.5pt x 1927.2pt>
 File: image-1.jpg Graphic file (type jpg)
  <use image-1.jpg>
 Package pdftex.def Info: image-1.jpg used on input line 219.
 (pdftex.def)             Requested size: 191.10214pt x 305.7411pt.
 
-<image-2.jpg, id=144, 1204.5pt x 1927.2pt>
+<image-2.jpg, id=146, 1204.5pt x 1927.2pt>
 File: image-2.jpg Graphic file (type jpg)
  <use image-2.jpg>
 Package pdftex.def Info: image-2.jpg used on input line 231.
 (pdftex.def)             Requested size: 191.10214pt x 305.7411pt.
 
-<image-3.jpg, id=145, 1204.5pt x 1927.2pt>
+<image-3.jpg, id=147, 1204.5pt x 1927.2pt>
 File: image-3.jpg Graphic file (type jpg)
  <use image-3.jpg>
 Package pdftex.def Info: image-3.jpg used on input line 236.
@@ -395,13 +395,7 @@ i-su-al-i-sa-tion. FAIMS
  []
 
 [7] [8 <./image-0.jpg> <./image-1.jpg>] [9 <./image-2.jpg> <./image-3.jpg>]
-[10] [11]
-Overfull \hbox (0.33208pt too wide) in paragraph at lines 281--282
-\OT1/cmr/m/n/12 At-trac-tion and Ac-cel-er-a-tion Pro-gramme, Mac-quarie Uni-ve
-r-sity, Flinders Uni-
- []
-
-(./faims.bbl [12]
+[10] [11] (./faims.bbl [12]
 Underfull \hbox (badness 1931) in paragraph at lines 65--69
 []\OT1/cmr/m/n/12 B. Carter, Craft-ing work flow- KoBoTool-box/ Post-GIS/ QGIS/
 
@@ -669,13 +663,13 @@ Package rerunfilecheck Info: File `faims.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 379.
  ) 
 Here is how much of TeX's memory you used:
- 6340 strings out of 494945
- 91107 string characters out of 6181032
- 185697 words of memory out of 5000000
- 9497 multiletter control sequences out of 15000+600000
+ 6340 strings out of 493013
+ 91107 string characters out of 6135682
+ 190590 words of memory out of 5000000
+ 9746 multiletter control sequences out of 15000+600000
  12959 words of font info for 50 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 34i,11n,30p,1812b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 1141 hyphenation exceptions out of 8191
+ 34i,11n,30p,1855b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
@@ -689,7 +683,7 @@ m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on faims.pdf (16 pages, 1236540 bytes).
+Output written on faims.pdf (16 pages, 1236544 bytes).
 PDF statistics:
  338 PDF objects out of 1000 (max. 8388607)
  299 compressed objects within 3 object streams
