@@ -1,46 +1,42 @@
-%% 
-%% Copyright 2007, 2008, 2009 Elsevier Ltd
-%% 
-%% This file is part of the 'Elsarticle Bundle'.
-%% ---------------------------------------------
-%% 
-%% It may be distributed under the conditions of the LaTeX Project Public
-%% License, either version 1.2 of this license or (at your option) any
-%% later version.  The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.2 or later is part of all distributions of LaTeX
-%% version 1999/12/01 or later.
-%% 
-%% The list of all files belonging to the 'Elsarticle Bundle' is
-%% given in the file `manifest.txt'.
-%% 
+% Fixes:
 
-%% Template article for Elsevier's document class `elsarticle'
-%% with numbered style bibliographic references
-%% SP 2008/03/01
+% PJ: 1.  however, you have included an e-component (halfline_websup.pdf) in your paper.
+% BBS response: I cannot find any mention of this resource. TeX line number, please?
+
+% Editors: 2. reference 18 has been "archieved" at a URL - typo!
+% BBS response: removed all references to archiving (spelled correctly or not) and simply delimited with ; All non-primary URIs have been migrated to footnotes and archived at perma.cc)
+
+% Editors: 3. Unable to find any current references to http://wiki.fedarch.org:8090/ online
+% BBS response: Some googling indicates that this is a part of the wiki we haven't touched for 4 years. I've googled that URI and removed all instances where it shows up.
+
+% Editors: 4. 43/44 + [16] + 76-78 + 104 - is there a need for both a link to current project homepage + a perma.cc version? If so, why are some links archived and others not? 
+% BBS: For 43/44, yes, because these projects may fail. All links for reference should be archived. Github is not archived because we have no capability to store github repos in a sufficiently stable archive.
+% BBS: For kevin Kelly, fixed, thanks.
+% for 76-78, moved to footnote because the perma.cc is link to archival text
+% for 104 (103 in updated text) it's a pointer to all of our code on github, and we are not able to provide a backup.
+
+% SR: 5.  Also formatting should be consistent - e.g. "(https://opendatakit.org/, https://perma.cc/9BGB-8RUT)" vs. "(https://github.com/FAIMS/UserToDev, archived at: https://perma.cc/M4B3-JJEA)"
+% BBS: Thanks. Fixed.
+
+% SR: 6. Use: 'https://www.linky.org/; https://perma.cc/linky' consistently throughout the text? Then omit 'archived at', 'archived', etc., and I'd say...separate with a semi-colon instead of comma, but don't have a strong opinion. 
+% BBS: Resolved.
+
+% SR: 7. At PDF lines 25-27 we should make sure the awkward embedded parentheses are eliminated. Maybe change the two hyperlinks (that I can find) in the text to sites that aren't FAIMS / FAIMS Github
+% BBS: Changed to citations.
+
+% 7a.: idig at PDF line 26-27, and ODK at line 43-44 to references (idig already has a ref [9] to a chapter in Mobilizing the past, which should be a 'cf' since it isn't directly about idig).
+% BBS response: All URIs in the text, save for those which are github links or non-citable links have been moved to footnotes with perma.cc added.
+
+% SR: 8. Two llnks in the text (that I could find) don't have perma.cc = https://github.com/FAIMS at PDF line 104 and https://www.faims.edu.au/ at line 345. I'd...add them for consistency? 
+% BBS: We cannot perma.cc our formal github organisation.
+
+% Editors: 9 In the notes, [16] Kelly, lacks a perma.cc. [17] Good, lacks a 'normal' URL. 
+% BBS: Kelly fixed. Thanks. Good... turned into a website link instead of a proceedings link.
 
 \documentclass[preprint,12pt, a4paper]{elsarticle}
-
-%% Use the option review to obtain double line spacing
-%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
-
-%% For including figures, graphicx.sty has been loaded in
-%% elsarticle.cls. If you prefer to use the old commands
-%% please give \usepackage{epsfig}
-
-%% The amssymb package provides various useful mathematical symbols
 \usepackage{amssymb}
-%% The amsthm package provides extended theorem environments
-%% \usepackage{amsthm}
-
-%% The lineno packages adds line numbers. Start line numbering with
-%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
-%% for the whole article with \linenumbers.
 \usepackage{lineno}
 \usepackage{hyperref}
-
-
-
 
 \journal{SoftwareX}
 
@@ -127,17 +123,17 @@ Android \sep Mobile software \sep Field research \sep Field science
 
 Many disciplines in the social sciences, humanities, and biological, earth, and environmental sciences depend upon data collected through human-mediated fieldwork. Such data might arise from excavation in archaeology, wildlife observation in ecology, soil sampling in environmental geochemistry, or subject interviews in oral history. Field research disciplines, however, often lack transparency and reproducibility, compromising the integrity of research results \cite{McNutt2016-dg}. Field data is often collected using an ad-hoc mix of hard copy, data fragments in various formats, and bespoke databases \cite{Borgman2015-zg, Kansa2010-qx, Kintigh2006-uf, Snow2006-nu}. Datasets, furthermore, are often trapped in hard-copy archives, local storage, or digital `silos', making them difficult to discover and limiting reinterpretation and reuse \cite{Blanke2010-ou}. Digital datasets are often highly variable, of poor quality, and incompatible. Deficiencies like these inhibit reuse of primary data and the aggregation of datasets from multiple studies for large-scale research \cite{Kintigh2006-uf, Kintigh2014-ks, McNutt2016-dg}. 
 
-Insufficient attention has been paid to the development of software specifically designed for digital data collection during field research. Some tools exist for discrete tasks, such as measuring strikes and dips for structural geology (e.g., GeoCline or Rocklogger for Android), but more complex field data collection has been neglected. Most digital data collection in archaeology, for example, is accomplished either using a combination of generic and repurposed mobile and desktop applications (e.g., multimedia, office productivity, GIS, database, or social survey software), or by building bespoke applications. Both approaches have severe limitations \cite{Sobotkova2016-mx}. Bespoke software is expensive to build and maintain, placing it beyond the reach of all but the best-funded projects and organisations (e.g., iDig, created by the American School of Classical Studies at Athens: \url{http://idig.tips/} (Archived at: \url{https://perma.cc/23PS-6567}); \cite{Fee2016-nn}). Repurposed software requires field researchers to make do with applications, designed for other contexts, which lack critical features but still require extensive customisation (cf. the use of a suite of iOS applications at Pompeii \cite{Ellis2016-vh}, or Ben Carter's combination of KoBoToolbox, PostGIS, QGIS, LibreOffice Base, and pgadminIII \cite{Carter2016-jm}). 
+Insufficient attention has been paid to the development of software specifically designed for digital data collection during field research. Some tools exist for discrete tasks, such as measuring strikes and dips for structural geology (e.g., GeoCline or Rocklogger for Android), but more complex field data collection has been neglected. Most digital data collection in archaeology, for example, is accomplished either using a combination of generic and repurposed mobile and desktop applications (e.g., multimedia, office productivity, GIS, database, or social survey software), or by building bespoke applications. Both approaches have severe limitations \cite{Sobotkova2016-mx}. Bespoke software is expensive to build and maintain, placing it beyond the reach of all but the best-funded projects and organisations (e.g., iDig, created by the American School of Classical Studies at Athens: \cite{American_School_of_Classical_Studies_in_Greece_undated-lm, Brown_University2016-cu}, see also \cite{Fee2016-nn}), designed for other contexts, which lack critical features but still require extensive customisation (cf. the use of a suite of iOS applications at Pompeii \cite{Ellis2016-vh}, or Ben Carter's combination of KoBoToolbox, PostGIS, QGIS, LibreOffice Base, and pgadminIII \cite{Carter2016-jm}). 
 
 FAIMS Mobile, conversely, is `generalised' software which combines features required for field research with sufficient customisability to allow its use across disciplines, appealing to a large enough user base to support its development and have a meaningful impact on research (see Section 4 below; cf. \cite{Sobotkova2016-mx}). It is designed for offline use, unlike most other generalised field data collection software such as ARK, Heurist, or Kora \cite{Gordon2016-xf}, which all require a continuous connection to a server. FAIMS Mobile is open-source software developed by the Field Acquired Information Management Systems Project, an e-research infrastructure project based at Macquarie University, Sydney, Australia. It is mature software that has been under development since 2012 (see: \cite{Ross2015-mo, Ross2013-dz, Sobotkova2015-lq}). 
 
-FAIMS Mobile is most comparable to Open Data Kit (ODK) (\url{https://opendatakit.org/}, \url{https://perma.cc/9BGB-8RUT}) and its variants, but is differentiated by its lineage. ODK was designed for social surveys, where an investigator asks questions of a interviewee. FAIMS originated in archaeology, where an investigator records observations about things in the material world, relationships between those observations, and metadata contextualising the collection of those observations. Both projects are open-source data collection platforms written in Java that can be customised using XML-based domain-specific languages. ODK also offers simpler but more restrictive customisation using ODK Build (an HTML5 drag-and-drop interface), XLSForm (a tool that uses an Excel file to build a form), or third-party, GUI-based applications like KoBoToolbox. FAIMS, conversely, supports more profound customisation without modification of core software. It also includes features not found in ODK: more nuanced relationships between entities, bi-directional synchronisation across all devices (a feature in ODK 2.0 Tool Suite, which is in alpha release), use of an append-only datastore that provides a version history for all records, support for a wider range of external sensors and peripherals like label printers (`ODK Sensors' is in alpha release), a more sophisticated data export framework, and more advanced geospatial data operations (compared to GeoODK and its derivatives). FAIMS also has richer and more granular help and metadata capture. In short, FAIMS is more customisable and has more fieldwork-specific features than ODK, but as a result customisation is more entailed. Field research projects, especially in liminal disciplines such as linguistics or oral history, would be wise to evaluate both platforms.
+FAIMS Mobile is most comparable to Open Data Kit (ODK) \cite{University_of_Washington2010-cl} and its variants, but is differentiated by its lineage. ODK was designed for social surveys, where an investigator asks questions of a interviewee. FAIMS originated in archaeology, where an investigator records observations about things in the material world, relationships between those observations, and metadata contextualising the collection of those observations. Both projects are open-source data collection platforms written in Java that can be customised using XML-based domain-specific languages. ODK also offers simpler but more restrictive customisation using ODK Build (an HTML5 drag-and-drop interface), XLSForm (a tool that uses an Excel file to build a form), or third-party, GUI-based applications like KoBoToolbox. FAIMS, conversely, supports more profound customisation without modification of core software. It also includes features not found in ODK: more nuanced relationships between entities, bi-directional synchronisation across all devices (a feature in ODK 2.0 Tool Suite, which is in alpha release), use of an append-only datastore that provides a version history for all records, support for a wider range of external sensors and peripherals like label printers (`ODK Sensors' is in alpha release), a more sophisticated data export framework, and more advanced geospatial data operations (compared to GeoODK and its derivatives). FAIMS also has richer and more granular help and metadata capture. In short, FAIMS is more customisable and has more fieldwork-specific features than ODK, but as a result customisation is more entailed. Field research projects, especially in liminal disciplines such as linguistics or oral history, would be wise to evaluate both platforms.
 
 
 \subsection{Experimental setting}
 
 
-FAIMS Mobile is designed to collect heterogenous data of various types (structured, free text, geospatial, multimedia), and accompanying metadata, produced using arbitrary methodologies during human-mediated field research. It requires customisation to instantiate a project-specific data model, user interface, and workflow, but it addresses problems shared across field-based projects, such as provision of a mobile GIS and automated synchronisation across multiple devices in a network-degraded environment. The FAIMS Project provides customisation services under a typical open-source revenue model \cite{Kelly2008-sb}. We also provide `User to Developer' documentation (\url{https://github.com/FAIMS/UserToDev}, archived at: \url{https://perma.cc/M4B3-JJEA}) to support do-it-yourself customisation.
+FAIMS Mobile is designed to collect heterogenous data of various types (structured, free text, geospatial, multimedia), and accompanying metadata, produced using arbitrary methodologies during human-mediated field research. It requires customisation to instantiate a project-specific data model, user interface, and workflow, but it addresses problems shared across field-based projects, such as provision of a mobile GIS and automated synchronisation across multiple devices in a network-degraded environment. The FAIMS Project provides customisation services under a typical open-source revenue model \cite{Kelly2008-sb}. We also provide `User to Developer' documentation\footnote{\url{https://github.com/FAIMS/UserToDev}; \url{https://perma.cc/M4B3-JJEA}}  to support do-it-yourself customisation.
 
 During a typical FAIMS-led deployment, researchers work with FAIMS Project staff to articulate their data model and workflow. A developer then renders that methodology into a `definition packet' of files that produce a `module' (i.e., an implementation of FAIMS Mobile customised for a particular project). Separate definition packet files offer nuanced control the data schema (XML), the user interface (XML and CSS), and automation and logic (Beanshell). The interface can also be translated into multiple languages using a (plain text) localisation file. Completed modules are deployed to a local or online Ubuntu server, and from there onto as many Android devices as needed (after the core mobile application is installed, e.g. from Google Play). Data is then collected using those devices, which can operate fully offline, and synchronised opportunistically when a connection to the server is available. Data can be validated at the time of entry on the device, or later on the server. At the end of data collection, data is exported in the user's desired format by means of a customisable exporter. Three deployment case studies have been published in Sobotkova, et al., 2016\cite{Sobotkova2016-mx}.
 
@@ -204,7 +200,7 @@ FAIMS Mobile improves field research by providing a wide range of features that 
 \subsection{Sample code snippets analysis}
 
 
-While a detailed discussion of module code is out of scope for this paper, two documents discuss module creation from start to finish. `FAIMS User to Developer Documentation' (\url{https://github.com/FAIMS/UserToDev}, archived at: \url{https://perma.cc/M4B3-JJEA}) is designed to walk users through the creation of a module from first principles. The `FAIMS Cookbook' is a tutorial covering data structures and API (\url{https://faimsproject.atlassian.net/wiki/x/RgAu}, archived: \url{https://perma.cc/H6XJ-X6E2}).
+While a detailed discussion of module code is out of scope for this paper, two documents discuss module creation from start to finish. `FAIMS User to Developer Documentation' \footnote{\url{https://github.com/FAIMS/UserToDev}; \url{https://perma.cc/M4B3-JJEA}} is designed to walk users through the creation of a module from first principles. The `FAIMS Cookbook' is a tutorial covering data structures and API\footnote{\url{https://faimsproject.atlassian.net/wiki/x/RgAu}; \url{https://perma.cc/H6XJ-X6E2}} .
 
 \section{Illustrative Examples}
 
@@ -257,7 +253,7 @@ FAIMS Mobile makes digital recording a more feasible and less costly option for 
 
 FAIMS Mobile has changed users' daily practice. Three case studies involving archaeological deployments \cite{Sobotkova2016-mx} indicate that users benefit from the increased efficiency of fieldwork, in that the time saved by avoiding digitisation more than offsets the time required to implement FAIMS and more data collected during fieldwork of a given length. Born-digital data avoided problems with delayed digitisation, which often occurred long after field recording when the context of of the record had been forgotten, or the person who made the record was no longer available. Researchers reported more complete, consistent, and granular data. They noted that information could be exchanged more quickly between excavators and specialists, which in one case improved `post-excavation reconstruction of the site' and facilitated the evaluation of patterns for meaning in another. They also observed that the process of moving from paper to digital required comprehensive reviews of field practice, during which knowledge implicit in existing systems to become explicit and data was modelled more carefully. By participating in a `miniature software development project', researchers gained familiarity with the strengths, limits, and demands of software, especially the need for extensive testing. The greatest challenge posed by the transition from paper has been the reallocation of time from the end of a project (digitisation) to the beginning (data modelling, development, and testing), even if an overall time-savings is realised. 
 
-Although the transition to digital recording during fieldwork represents a significant socio-technical change, FAIMS Mobile has seen good uptake. Since 2013, FAIMS Mobile has been customised at least 40 times (by our team or independently), with 29 confirmed field deployments, nine of which included multiple field seasons (\url{https://faimsproject.atlassian.net/wiki/x/jBH3B} \url{https://perma.cc/RW4K-7X2U}). Considering only FAIMS-led development, approximately 300 users have logged over 10,000 hours in the application. Most uptake to date has been at large, multi-year projects that are still early in their lifecycle, so all FAIMS-related publications to date have focused on the software itself or the transition from paper-based to digital workflows. Fourteen archaeology, ecology, and history projects are scheduled for 2017 with an estimated usage of another 10,000 hours. A 2016-2017 New South Wales Research Attraction and Acceleration Program award is funding links to government resources (e.g., automated data submission to the Aboriginal Heritage Information Management System of NSW), making FAIMS Mobile more attractive to commercial users. This award is also funding community heritage and citizen science deployments, where members of the public can download preconfigured versions of FAIMS Mobile from Google Play (as discrete APKs; See our current set at \url{https://play.google.com/store/apps/developer?id=FAIMS%20Project} \url{https://perma.cc/574T-QSVD} which includeds a Burial Mounds data collector and a ADS Gravestones data collector with screenshots of both) to monitor archaeological remains or wildlife.
+Although the transition to digital recording during fieldwork represents a significant socio-technical change, FAIMS Mobile has seen good uptake. Since 2013, FAIMS Mobile has been customised at least 40 times (by our team or independently), with 29 confirmed field deployments, nine of which included multiple field seasons (\url{https://faimsproject.atlassian.net/wiki/x/jBH3B} \url{https://perma.cc/RW4K-7X2U}). Considering only FAIMS-led development, approximately 300 users have logged over 10,000 hours in the application. Most uptake to date has been at large, multi-year projects that are still early in their lifecycle, so all FAIMS-related publications to date have focused on the software itself or the transition from paper-based to digital workflows. Fourteen archaeology, ecology, and history projects are scheduled for 2017 with an estimated usage of another 10,000 hours. A 2016-2017 New South Wales Research Attraction and Acceleration Program award is funding links to government resources (e.g., automated data submission to the Aboriginal Heritage Information Management System of NSW), making FAIMS Mobile more attractive to commercial users. This award is also funding community heritage and citizen science deployments, where members of the public can download preconfigured versions of FAIMS Mobile from Google Play\footnote{See our current set at \url{https://play.google.com/store/apps/developer?id=FAIMS\%20Project}; \url{https://perma.cc/574T-QSVD} } which includes a Burial Mounds data collector and a ADS Gravestones data collector with screenshots of both) to monitor archaeological remains or wildlife.
 
 
 \section{Conclusions}
@@ -275,7 +271,7 @@ When they collect data digitally, field researchers often re-purpose mass-market
 \section*{Acknowledgements}
 
 
-We would like to thank the many individuals and organisation who have contributed the FAIMS Project since 2012. For a complete list of project sponsors and participants, see \url{https://www.faims.edu.au/}.
+We would like to thank the many individuals and organisation who have contributed the FAIMS Project since 2012. For a complete list of project sponsors and participants, see \url{https://www.faims.edu.au/}; \url{https://perma.cc/K8DL-SJ79}.
 
 Funding: This work was supported by the National eResearch Collaboration Tools and Resources programme (RT043; V005), the Australian Research Council (LE140100151), the New South Wales Government Research Attraction and Acceleration Program, Macquarie University, Flinders University, La Trobe University, Southern Cross University, the University of Queensland, the University of Sydney, UNSW Australia, the Commonwealth Scientific and Industrial Research Organisation ON Prime programme, and fees paid by our users for consultation, customisation, deployment, and support services.
 
@@ -322,7 +318,7 @@ C2 & Permanent link to code/repository used for this code version & \begin{descr
 \end{description}
 \\
 \hline
-C3 & Legal Code License   & GPLv3 \\
+C3 & Legal Code License & GPLv3 \\
 \hline
 C4 & Code versioning system used & git \\
 \hline
@@ -333,7 +329,7 @@ C6 & Compilation requirements, operating environments \& dependencies & Android 
 C7 & If available Link to developer documentation/manual & \begin{description} \item [Module Cookbook] \url{https://faimsproject.atlassian.net/wiki/x/RgAu} 
 \item [Module Beanshell API] \url{https://faimsproject.atlassian.net/wiki/display/FAIMS/Program+Logic+Support}
 \item [Developer documentation home] \url{https://faimsproject.atlassian.net/wiki/spaces/FAIMS/overview}
-\item [`User to Developer' documentation] (\url{https://github.com/FAIMS/UserToDev}, archived at: \url{https://perma.cc/M4B3-JJEA}
+\item [`User to Developer' documentation] (\url{https://github.com/FAIMS/UserToDev}; \url{https://perma.cc/M4B3-JJEA}
 \end{description}
  \\
 \hline
@@ -354,7 +350,7 @@ C8 & Support email for questions & \url{support@fedarch.org} \\
 \hline
 S1 & Current software version & 2.5.20 \\
 \hline
-S2 & Permanent link to executables of this version  & \begin{description} \item [FAIMS Mobile]\url{http://www.fedarch.org/apk/}
+S2 & Permanent link to executables of this version  & \begin{description} \item [FAIMS Mobile]\url{https://www.fedarch.org/apk/}
 \item [Google Play] \url{https://play.google.com/store/apps/details?id=au.edu.faims.mq.fieldresearch2&hl=en}
 \item [Server Installer (wget and pipe to bash)] \url{https://raw.githubusercontent.com/FAIMS/faims-web/master/installer/puppetInstall.sh} \end{description}\\
 
